@@ -1,0 +1,53 @@
+print ("Bienvenido aca podra realizar el cambio de bases numericas.")
+print("Nota: la base numerica minima es de 1 y ma maxima es de 16.")
+
+num = ""
+basac = 0
+bas10 = 0
+newbas = 0
+a=[]
+
+print ("Ingrese un numero entero: ")
+num = input ()
+print ("Ingrese la base de entrada: ")
+basac = int(input())
+
+tam = len (num)
+
+for k in range(len(num)):
+    a.append(num[k])
+        
+cont = tam -1
+temporal = 0
+    
+for i in range(tam):
+    temporal = int(a[i]) * pow(basac, cont)
+    cont = cont - 1
+    bas10 = bas10 + temporal
+        
+print("El numero en base 10 es: ", format(bas10))
+
+menu = """
+Menu:
+1. Binario
+2. Octal
+3. Hexadecimal
+"""
+print(menu)
+opcion = int(input("Elige una opcion: "))
+if opcion is 1:
+    print(bin(bas10))
+elif opcion is 2:
+    print(oct(bas10))
+elif opcion is 3:
+    print(hex(bas10))
+else:
+    print("Error")
+
+print ("El numero en binario es:")
+b = (bin(bas10))
+print(b)
+print("El numero binario", b, "en mensaje ASCII es:")
+casc = b
+for c in casc:
+    print('%s: %i' % (c, ord (c)) )
